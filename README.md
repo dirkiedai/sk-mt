@@ -19,7 +19,7 @@ pip3 install tensorboardX cffi cython dataclasses hydra-core numpy regex sacremo
 
 pip3 install -U git+https://github.com/pltrdy/pyrouge
 ```
-You can also refer to Dockerfile provided in `docker`.
+You can also refer to the Dockerfile provided in `docker`.
 
 ## Instructions
 We use an example to show how to use our codes. We have implemented our proposed SK-MT under two frameworks, [fairseq](https://github.com/facebookresearch/fairseq) and [THUMT](https://github.com/THUNLP-MT/THUMT/tree/pytorch). The scores we reported in our paper is evaluated based on THUMT framework.
@@ -34,6 +34,7 @@ To implement SK-MT,  we recommend to follow [copyisallyouneed](https://github.co
 For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1KJ3jxXN7ziM9ZlIRHK-2XM5g9yVf9NaG/view?usp=sharing) for THUMT and [binarized data](https://drive.google.com/file/d/1Xg4DVgZpOltME76RyZ8rKQ6xjVOHbolX/view?usp=sharing) for fairseq.
 
 ### Domain Adaptation
+This section provides instructions to perform SK-MT based on THUMT framework. More information about the implementations on fairseq framework can be found in the [fairseq branch](https://github.com/dirkiedai/sk-mt/tree/fairseq).
 #### Inference with SK-MT
 ```
 bash scripts/domain_adaptation/run_sk_mt.sh
