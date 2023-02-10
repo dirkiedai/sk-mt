@@ -29,7 +29,7 @@ The pre-trained translation model can be downloaded from this [site](https://git
 We provide the Transformer-based model we use in our experiments under those two frameworks: [fairseq Model](https://drive.google.com/file/d/1cVf6TbZxj59o12HRIgZgtYFq_zAViR8e/view?usp=sharing) and [THUMT Model](https://drive.google.com/file/d/18zhbv-JXeSL802OsUL0wZUgSNcjjE8L1/view?usp=sharing).
 
 ### Data
-The raw data can be downloaded in this [site](), and you should preprocess them with [moses](https://github.com/moses-smt/mosesdecoder) toolkits and the bpe-codes provided by pre-trained model. 
+The raw data can be downloaded in this [site](https://github.com/roeeaharoni/unsupervised-domain-clusters), and you should preprocess them with [moses](https://github.com/moses-smt/mosesdecoder) toolkits and the bpe-codes provided by pre-trained model. 
 To implement SK-MT,  we recommend to follow [copyisallyouneed](https://github.com/jcyk/copyisallyouneed) to perform text retrieval using BM25. The obtained textual data can be used in THUMT framework. Moreover, if you favor fairseq, you are required to follow its instruction to preprocess and binarize the textual data.
 For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1KJ3jxXN7ziM9ZlIRHK-2XM5g9yVf9NaG/view?usp=sharing) for THUMT and [binarized data](https://drive.google.com/file/d/1Xg4DVgZpOltME76RyZ8rKQ6xjVOHbolX/view?usp=sharing) for fairseq.
 
