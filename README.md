@@ -2,16 +2,15 @@
 
 Official Code for our paper "Simple and Scalable Nearest Neighbor Machine Translation" (ICLR 2023).
 
-
-This project impliments our SK-MT(short for **S**imple and Scalable **k**NN-**MT**) as well as vanilla kNN-MT. The implementation is build upon [THUMT](https://github.com/THUNLP-MT/THUMT/tree/pytorch) and heavily inspired by [adaptive-knn-mt](https://github.com/zhengxxn/adaptive-knn-mt) and [KoK](https://github.com/wangqi1996/KoK).
-Many thanks to the authors for making their code avaliable.
+This branch provides the implementation of SK-MT(short for **S**imple and Scalable **k**NN-**MT**) under fairseq framework.
 
 ## Requirements and Installation
 * pytorch version >= 1.1.0
 * python version >= 3.6
 * faiss-gpu >= 1.6.5
 * pytorch_scatter = 2.0.5
-You can install this project by
+
+You can install this project by running
 ```
 pip install --editable ./
 ```
