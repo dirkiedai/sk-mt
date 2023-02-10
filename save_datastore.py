@@ -69,8 +69,7 @@ def main(args, override_args=None):
     logger.info(model_args)
 
     # Build criterion, we do not need this, so remove it, by
-    # criterion = task.build_criterion(model_args)
-    # criterion.eval()
+
     if args.save_plain_text:
         batch_src_tokens = []
         batch_target = []
@@ -138,8 +137,6 @@ def main(args, override_args=None):
                 # so we append a forward_and_get_hidden_state_step method in Translation task
                 features = task.forward_and_get_hidden_state_step(sample, model)  # [B, T, H]
                 target = sample['target']  # [B, T]
-                # print('feature_size:{}'.format(features.size()))
-                # print('target_size:{}'.format(target.size()))
 
                 # get useful parameters
                 batch_size = target.size(0)
@@ -188,24 +185,24 @@ def main(args, override_args=None):
                         np.float32)
                     dstore_vals[dstore_idx:reduce_size + dstore_idx] = target.unsqueeze(-1).cpu().numpy().astype(np.int)
 
-                # if args.save_plain_text:
-                #     batch_src_tokens.append(src_tokens.cpu())
-                #     batch_target.append(target.cpu())
+                if args.save_plain_text:
+                    batch_src_tokens.append(src_tokens.cpu())
+                    batch_target.append(target.cpu())
 
                     # we need look up the dict
                     # TODO, here src strs is not debpe
-                    # src_strs = src_dict.string(src_tokens, return_list=True)  # [[str]]
-                    # trg_tokens = tgt_dict.string(target, return_list=True)  # [[token]]
-                    # cur_trg_str = ""
-                    # for src_str, trg_token in zip(src_strs, trg_tokens):
-                    #     if len(trg_token) == 0:
-                    #         _trg_token = "<eos>"
-                    #     else:
-                    #         _trg_token = trg_token
-                    #     cur_trg_str = cur_trg_str + ' {}'.format(_trg_token)
-                    #     plain_text.append("src: {} trg: {}".format(src_str, cur_trg_str))
-                    #     if len(trg_token) == 0:
-                    #         cur_trg_str = ""
+                    src_strs = src_dict.string(src_tokens, return_list=True)  # [[str]]
+                    trg_tokens = tgt_dict.string(target, return_list=True)  # [[token]]
+                    cur_trg_str = ""
+                    for src_str, trg_token in zip(src_strs, trg_tokens):
+                        if len(trg_token) == 0:
+                            _trg_token = "<eos>"
+                        else:
+                            _trg_token = trg_token
+                        cur_trg_str = cur_trg_str + ' {}'.format(_trg_token)
+                        plain_text.append("src: {} trg: {}".format(src_str, cur_trg_str))
+                        if len(trg_token) == 0:
+                            cur_trg_str = ""
 
                 dstore_idx += reduce_size
 
@@ -214,22 +211,6 @@ def main(args, override_args=None):
                     break
             # -------- end, by
 
-            # _loss, _sample_size, log_output = task.valid_step(sample, model, criterion)
-            # progress.log(log_output, step=i)
-            # log_outputs.append(log_output)
-
-        # if args.distributed_world_size > 1:
-        #     log_outputs = distributed_utils.all_gather_list(
-        #         log_outputs,
-        #         max_size=getattr(args, "all_gather_list_size", 16384),
-        #     )
-        #     log_outputs = list(chain.from_iterable(log_outputs))
-
-        # with metrics.aggregate() as agg:
-        #     task.reduce_metrics(log_outputs, criterion)
-        #     log_output = agg.get_smoothed_values()
-        #
-        # progress.print(log_output, tag=subset, step=i)
 
     if args.save_plain_text:
 
