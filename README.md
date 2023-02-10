@@ -2,8 +2,10 @@
 
 Official Code for our paper "Simple and Scalable Nearest Neighbor Machine Translation" (ICLR 2023).
 
-This project impliments our SK-MT(short for **S**imple and Scalable **k**NN-**MT**) as well as vanilla kNN-MT. The implementation is build upon [THUMT](https://github.com/THUNLP-MT/THUMT/tree/pytorch) and heavily inspired by [adaptive-knn-mt](https://github.com/zhengxxn/adaptive-knn-mt) and [KoK](https://github.com/wangqi1996/KoK).
-Many thanks to the authors for making their code avaliable.
+This project impliments our SK-MT(short for **S**imple and Scalable **k**NN-**MT**) as well as vanilla kNN-MT. The implementation is built upon [THUMT](https://github.com/THUNLP-MT/THUMT/tree/pytorch) and heavily inspired by [adaptive-knn-mt](https://github.com/zhengxxn/adaptive-knn-mt) and [KoK](https://github.com/wangqi1996/KoK). Many thanks to the authors for making their code avaliable.
+
+We also provide the implementation built upon [fairseq](https://github.com/facebookresearch/fairseq), which can be found in [fairseq branch](https://github.com/dirkiedai/sk-mt/tree/fairseq). The scores we reported in our paper is evaluated based on THUMT framework.
+
 
 ## Requirements and Installation
 * pytorch version >= 1.1.0
@@ -19,10 +21,8 @@ pip3 install tensorboardX cffi cython dataclasses hydra-core numpy regex sacremo
 
 pip3 install -U git+https://github.com/pltrdy/pyrouge
 ```
-You can also refer to the Dockerfile provided in `docker`.
 
 ## Instructions
-We use an example to show how to use our codes. We have implemented our proposed SK-MT under two frameworks, [fairseq](https://github.com/facebookresearch/fairseq) and [THUMT](https://github.com/THUNLP-MT/THUMT/tree/pytorch). The scores we reported in our paper is evaluated based on THUMT framework.
 
 ### Pre-trained Model
 The pre-trained translation model can be downloaded from this [site](https://github.com/pytorch/fairseq/blob/master/examples/wmt19/README.md). We use the De-En Single Model and follow [adaptive-knn-mt](https://github.com/zhengxxn/adaptive-knn-mt) to evaluate the performance of the kNN-MT and adaptive kNN-MT.
