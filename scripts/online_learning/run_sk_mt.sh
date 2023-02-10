@@ -1,7 +1,7 @@
-run_path=/apdcephfs/private_dirkiedai/from_zhirui/sknn-mt/code/transmart-train
-data_path=/apdcephfs/private_dirkiedai/from_zhirui/sknn-mt/data/online_learning/ol-search-bm25
-model_path=/apdcephfs/private_dirkiedai/from_zhirui/sknn-mt/model/pretrain_nmt/thumt_version
-output_path=/apdcephfs/private_dirkiedai/from_zhirui/sknn-mt/output/online_learning/emea
+run_path=.
+data_path=
+model_path=
+output_path=
 mkdir -p $output_path
 
 device_id=0

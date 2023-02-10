@@ -1,6 +1,6 @@
 PROJECT_PATH=.
-DATA_PATH=$PROJECT_PATH/data/domain_adaptation
-MODEL_PATH=$PROJECT_PATH/model/pretrain/thumt_version
+DATA_PATH=/path/to/data
+MODEL_PATH=/path/to/model
 
 export PYTHONPATH=$PYTHONPATH:$PROJECT_PATH
 lpv=0.6

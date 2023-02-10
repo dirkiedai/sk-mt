@@ -8,10 +8,10 @@ KNN_TEMPERATURE_dict=([it]="10" [medical]="100" [koran]="100" [law]="100")
 KNN_LAMBDA_dict=([it]="0.7" [medical]="0.8" [koran]="0.8" [law]="0.8")
 KNN_K_dict=([it]="8" [medical]="4" [koran]="16" [law]="4")
 
-PROJECT_PATH=/data/dirkiedye/knn-mt-research/sknn-mt-thumt
-DATA_PATH=$PROJECT_PATH/data/domain_adaptation
-MODEL_PATH=/data/dirkiedye/knn-mt-research/sknn-mt-thumt-copy/model/pretrain_nmt/thumt_version
-DSTORE_PATH=/data/dirkiedye/knn-mt-research/datastore
+PROJECT_PATH=.
+DATA_PATH=/path/to/data
+MODEL_PATH=/path/to/model
+DSTORE_PATH=/path/to/datastore
 
 export PYTHONPATH=$PYTHONPATH:${PROJECT_PATH}
 
