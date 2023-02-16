@@ -4,7 +4,7 @@ Official Code for our paper "Simple and Scalable Nearest Neighbor Machine Transl
 
 This project impliments our SK-MT(short for **S**imple and Scalable **k**NN-**MT**) as well as vanilla kNN-MT. The implementation is built upon [THUMT](https://github.com/THUNLP-MT/THUMT/tree/pytorch) and heavily inspired by [adaptive-knn-mt](https://github.com/zhengxxn/adaptive-knn-mt) and [KoK](https://github.com/wangqi1996/KoK). Many thanks to the authors for making their code avaliable.
 
-We also provide the implementation built upon [fairseq](https://github.com/facebookresearch/fairseq), which can be found in [fairseq branch](https://github.com/dirkiedai/sk-mt/tree/fairseq). The scores we reported in our paper is evaluated based on THUMT framework.
+We also provide the implementation built upon [fairseq](https://github.com/facebookresearch/fairseq), which can be found in [fairseq branch](https://github.com/dirkiedai/sk-mt/tree/fairseq). The scores we reported in our paper are evaluated based on THUMT framework.
 
 
 ## Requirements and Installation
