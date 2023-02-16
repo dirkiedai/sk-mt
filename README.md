@@ -37,7 +37,7 @@ CUDA_VISIBLE_DEVICES=0 python3 experimental_generate.py $DATA_PATH \
     --tm-counts 2 \
     --fp16 \
     --tokenizer moses --remove-bpe \
-    --model-overrides "{'load_knn_datastore': False, 'use_knn_datastore': True, 'dstore_fp16': True, 'k': 2, 'probe': 32,
+    --model-overrides "{'load_knn_datastore': False, 'use_knn_datastore': True, 'dstore_fp16': True, 'k': 1, 'probe': 32,
     'knn_sim_func': 'do_not_recomp_l2', 'use_gpu_to_search': True, 'move_dstore_to_mem': True, 'no_load_keys': True,
     'knn_temperature_type': 'fix', 'knn_temperature_value': 100, 'knn_lambda_temperature_value': 100,
      }" \
