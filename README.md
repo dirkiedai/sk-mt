@@ -8,7 +8,7 @@ This branch provides the implementation of SK-MT(short for **S**imple and Scalab
 * pytorch version >= 1.1.0
 * python version >= 3.6
 * faiss-gpu >= 1.6.5
-* pytorch_scatter = 2.0.5
+* pytorch_scatter = 2.0.7
 
 You can install this project by running
 ```
@@ -63,5 +63,5 @@ CUDA_VISIBLE_DEVICES=0 python3 experimental_generate.py $DATA_PATH \
 If you find this repo helpful for your research, please cite the following paper:
 
 ## Contact
-If you have questions, suggestions and bug reports, please email <dirkiedye@gmail.com>.
+If you have questions, suggestions and bug reports, please email <dirkiedye@gmail.com> or <zrustc11@gmail.com>.
 
