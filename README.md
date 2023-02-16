@@ -11,13 +11,13 @@ We also provide the implementation built upon [fairseq](https://github.com/faceb
 * pytorch version >= 1.1.0
 * python version >= 3.6
 
-You need to install pytorch and cuda based on your hardware.
+You need to install **PyTorch** and **cuda** based on your hardware.
 ```
 pip install --upgrade pip
 
-pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+pip install tensorboardX cffi cython dataclasses hydra-core numpy regex sacremoses sacrebleu tqdm nltk matplotlib absl-py sklearn tensorboard bitarray six
 
-pip install tensorboardX cffi cython dataclasses hydra-core numpy regex sacremoses sacrebleu tqdm nltk>=3.2 matplotlib absl-py fairseq sklearn tensorboard bitarray
+pip install torch-scatter==2.0.7
 
 pip install -U git+https://github.com/pltrdy/pyrouge
 ```
@@ -31,7 +31,7 @@ We provide the Transformer-based model we use in our experiments under those two
 ### Data
 The raw data can be downloaded in this [site](https://github.com/roeeaharoni/unsupervised-domain-clusters), and you should preprocess them with [moses](https://github.com/moses-smt/mosesdecoder) toolkits and the bpe-codes provided by pre-trained model. 
 To implement SK-MT,  we recommend to follow [copyisallyouneed](https://github.com/jcyk/copyisallyouneed) to perform text retrieval using BM25. The obtained textual data can be used in THUMT framework. Moreover, if you favor fairseq, you are required to follow its instruction to preprocess and binarize the textual data.
-For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1iyIGqh0q2KcXLmQE_1YtdW9a5ByEqmbj/view?usp=share_link) for THUMT and [binarized data](https://drive.google.com/file/d/1AgnJhyO_5g55BeCLMUfs7HzEzG6u2FXX/view?usp=sharing) for fairseq.
+For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1lgd_ETu_S594IYjeaYYP29zCDipv18Bi/view?usp=share_link) for THUMT and [binarized data](https://drive.google.com/file/d/1AgnJhyO_5g55BeCLMUfs7HzEzG6u2FXX/view?usp=sharing) for fairseq.
 
 ### Domain Adaptation
 This section provides instructions to perform SK-MT based on THUMT framework. More information about the implementations on fairseq framework can be found in the [fairseq branch](https://github.com/dirkiedai/sk-mt/tree/fairseq).

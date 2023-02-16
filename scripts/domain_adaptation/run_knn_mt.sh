@@ -35,14 +35,14 @@ do
     mkdir -p $OUTPUT_PATH
 
     CUDA_VISIBLE_DEVICES=$device_id python3 $PROJECT_PATH/thumt/bin/translator.py \
-        --input $DATA_PATH/$domain/$type.src.bpe \
+        --input $DATA_PATH/$domain.$type.src4nmt \
         --output $OUTPUT_PATH/$domain.$type.knnmt.adapter.lpv$lpv.k$K.lambda$LAMBDA.temp$TEMP.output  \
         --vocabulary $MODEL_PATH/dict.de.txt $MODEL_PATH/dict.en.txt  \
         --models transformer --checkpoints $MODEL_PATH \
         --parameters=beam_size=4,device_list=[0],knn_t=$knn_t,decode_batch_size=$bsz,k=$K,decode_alpha=$lpv,tm_count=$tm,load_knn_datastore=True,use_knn_datastore=True,dstore_filename=$DSTORE_PATH/$domain,dstore_size=$dstore_size,dstore_fp16=True,knn_temperature_type='fix',knn_temperature_value=$TEMP,knn_lambda_type='fix',knn_lambda_value=$LAMBDA,use_gpu_to_search=True 
 
     detok_path=$PROJECT_PATH/scripts
-    ref_data=$DATA_PATH/$domain/$type.en
+    ref_data=$DATA_PATH/domain_adaptation/$domain.$type.ref
 
     data_input=$OUTPUT_PATH/$domain.$type.knnmt.adapter.lpv$lpv.k$K.lambda$LAMBDA.temp$TEMP.output
     perl $detok_path/detokenizer.perl -l en < $data_input > $data_input.post
