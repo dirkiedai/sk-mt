@@ -31,7 +31,7 @@ We provide the Transformer-based model we use in our experiments under those two
 ### Data
 The raw data can be downloaded in this [site](https://github.com/roeeaharoni/unsupervised-domain-clusters), and you should preprocess them with [moses](https://github.com/moses-smt/mosesdecoder) toolkits and the bpe-codes provided by pre-trained model. 
 To implement SK-MT,  we recommend to follow [copyisallyouneed](https://github.com/jcyk/copyisallyouneed) to perform text retrieval using BM25. The obtained textual data can be used in THUMT framework. Moreover, if you favor fairseq, you are required to follow its instruction to preprocess and binarize the textual data.
-For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1KJ3jxXN7ziM9ZlIRHK-2XM5g9yVf9NaG/view?usp=sharing) for THUMT and [binarized data](https://drive.google.com/file/d/1Xg4DVgZpOltME76RyZ8rKQ6xjVOHbolX/view?usp=sharing) for fairseq.
+For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1iyIGqh0q2KcXLmQE_1YtdW9a5ByEqmbj/view?usp=share_link) for THUMT and [binarized data](https://drive.google.com/file/d/1AgnJhyO_5g55BeCLMUfs7HzEzG6u2FXX/view?usp=sharing) for fairseq.
 
 ### Domain Adaptation
 This section provides instructions to perform SK-MT based on THUMT framework. More information about the implementations on fairseq framework can be found in the [fairseq branch](https://github.com/dirkiedai/sk-mt/tree/fairseq).
@@ -63,5 +63,5 @@ The recommeded hyper-parameters are the same as what used in Domain Adaptation.
 If you find this repo helpful for your research, please cite the following paper:
 
 ## Contact
-If you have questions, suggestions and bug reports, please email <dirkiedye@gmail.com>.
+If you have questions, suggestions and bug reports, please email <dirkiedye@gmail.com> or <zrustc11@gmail.com>.
 
