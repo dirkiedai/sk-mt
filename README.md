@@ -11,7 +11,7 @@ We also provide the implementation built upon [fairseq](https://github.com/faceb
 * pytorch version >= 1.1.0
 * python version >= 3.6
 
-You need to install [PyTorch](https://pytorch.org/) on your hardware.
+You need to install [PyTorch](https://pytorch.org/) based on your hardware condition.
 ```
 pip install --upgrade pip
 
