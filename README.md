@@ -11,13 +11,17 @@ We also provide the implementation built upon [fairseq](https://github.com/faceb
 * pytorch version >= 1.1.0
 * python version >= 3.6
 
-You need to install [PyTorch](https://pytorch.org/) based on your hardware condition.
+You need to install [PyTorch](https://pytorch.org/) based on your hardware condition. Take cu116 as an example, you can install the environment by
 ```
 pip install --upgrade pip
 
-pip install tensorboardX cffi cython dataclasses hydra-core numpy regex sacremoses sacrebleu tqdm nltk matplotlib absl-py sklearn tensorboard bitarray six
+pip3 install torch==1.12.0+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
 
-pip install torch-scatter==2.0.7
+pip install torch-scatter -f https://data.pyg.org/whl/torch-1.12.0+cu116.html
+
+pip install numpy==1.23
+
+pip install tensorboardX cffi cython dataclasses hydra-core regex sacremoses sacrebleu tqdm nltk matplotlib absl-py sklearn tensorboard bitarray six
 
 pip install -U git+https://github.com/pltrdy/pyrouge
 ```
