@@ -8,10 +8,13 @@ This branch provides the implementation of SK-MT(short for **S**imple and Scalab
 * pytorch version >= 1.1.0
 * python version >= 3.6
 * faiss-gpu >= 1.6.5
-* pytorch_scatter = 2.0.7
+* sacrebleu == 1.5.1
+* pytorch_scatter
 
 You can install this project by running
 ```
+pip install faiss-gpu
+pip install sacrebleu==1.5.1
 pip install --editable ./
 ```
 
