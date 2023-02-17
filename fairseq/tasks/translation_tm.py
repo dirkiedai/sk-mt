@@ -482,23 +482,7 @@ class TranslationTMTask(LegacyFairseqTask):
                     if hasattr(model.decoder, "knn_datastore"):
                         model.decoder.knn_datastore = [knn_dstore for knn_dstore in self.knn_dstores for i in range(beam)]
             else:
-                # knn_dstores = list()
-                # for i in range(bsz):
-                #     keys, vals = decoder_output[i][tgt_tm_masks[i]], tgt_tm_tokens[i][tgt_tm_masks[i]]
-
-                #     if args.dstore_fp16:
-                #         keys = keys.half()
-                #     knn_dstores.append((keys, vals))
-
-                # for model in models:
-                #     if hasattr(model.decoder, "knn_datastore"):
-                #         model.decoder.knn_datastore = [knn_dstore for knn_dstore in knn_dstores for i in range(beam)]
-
-                # keys = decoder_output.repeat_interleave(beam, dim = 0)
-                # if args.dstore_fp16:
-                #     keys = keys.half()
-                # vals = tgt_tm_tokens.repeat_interleave(beam, dim = 0)
-                # masks = tgt_tm_masks.repeat_interleave(beam, dim = 0)
+                
                 keys = decoder_output.half() if args.dstore_fp16 else decoder_output
 
                 keys = keys.repeat_interleave(beam, dim = 0)
