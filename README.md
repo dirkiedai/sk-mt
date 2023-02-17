@@ -19,7 +19,9 @@ pip3 install torch==1.12.0+cu116 --extra-index-url https://download.pytorch.org/
 
 pip install torch-scatter -f https://data.pyg.org/whl/torch-1.12.0+cu116.html
 
-pip install tensorboardX numpy cffi cython dataclasses hydra-core regex sacremoses sacrebleu tqdm nltk matplotlib absl-py sklearn tensorboard bitarray six
+pip install numpy=1.23
+
+pip install tensorboardX cffi cython dataclasses hydra-core regex sacremoses sacrebleu tqdm nltk matplotlib absl-py sklearn tensorboard bitarray six
 
 pip install -U git+https://github.com/pltrdy/pyrouge
 ```
