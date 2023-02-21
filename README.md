@@ -35,7 +35,7 @@ We provide the Transformer-based model we use in our experiments under those two
 ### Data
 The raw data can be downloaded in this [site](https://github.com/roeeaharoni/unsupervised-domain-clusters), and you should preprocess them with [moses](https://github.com/moses-smt/mosesdecoder) toolkits and the bpe-codes provided by pre-trained model. 
 To implement SK-MT,  we recommend to follow [copyisallyouneed](https://github.com/jcyk/copyisallyouneed) to perform text retrieval using BM25. The obtained textual data can be used in THUMT framework. Moreover, if you favor fairseq, you are required to follow its instruction to preprocess and binarize the textual data.
-For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1lgd_ETu_S594IYjeaYYP29zCDipv18Bi/view?usp=share_link) for THUMT and [binarized data](https://drive.google.com/file/d/1AgnJhyO_5g55BeCLMUfs7HzEzG6u2FXX/view?usp=sharing) for fairseq.
+For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1dwOsYVfGUqNgF0UFG2bDtW--TQs8h9E-/view?usp=share_link) for THUMT and [binarized data](https://drive.google.com/file/d/1AgnJhyO_5g55BeCLMUfs7HzEzG6u2FXX/view?usp=sharing) for fairseq.
 
 Update: We also provide the scripts to retrieve reference samples and preprocess 
 ### Domain Adaptation
