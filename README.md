@@ -24,6 +24,7 @@ pip install --editable ./
 Please follow our [official guide](https://github.com/dirkiedai/sk-mt/tree/thumt) to prepare textual data and pre-trained model.
 ### Domain Adaptation
 ### Data Preprocessing
+You should prepare retrieved reference samples at first, and should not run data_clean.py provided in THUMT branch.
 ```
 python3 $PROJECT_PATH/data_clean.py \
         --input $DATA_PATH/$domain.$type \
