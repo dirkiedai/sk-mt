@@ -23,7 +23,7 @@ def parse_args():
     parser.add_argument('--topk', type=int, default=100)
     parser.add_argument('--allow_hit', action='store_true')
     parser.add_argument('--resort', action='store_true')
-    parser.add_argument('--task', type=str, default='translation')
+    parser.add_argument('--task', type=str, default='domain_adaptation')
 
 
     return parser.parse_args()
@@ -99,7 +99,7 @@ def main(args):
 
         index = args.index_name
 
-        if args.task == 'translation':
+        if args.task == 'domain_adaptation':
             actions = []
             for idx, (query, response) in tqdm.tqdm(enumerate(zip(queries, responses)), total=len(queries)):
             

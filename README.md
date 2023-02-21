@@ -40,6 +40,10 @@ For convenience, We also provide pre-processed [textual data](https://drive.goog
 **Update**: We also provide the scripts to retrieve reference samples.
 ### Domain Adaptation
 This section provides instructions to perform SK-MT based on THUMT framework. More information about the implementations on fairseq framework can be found in the [fairseq branch](https://github.com/dirkiedai/sk-mt/tree/fairseq).
+#### Retrieval and Preprocessing
+```
+bash scripts/domain_adaptation/preprocess.sh
+```
 #### Inference with SK-MT
 ```
 bash scripts/domain_adaptation/run_sk_mt.sh
