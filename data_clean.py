@@ -44,12 +44,10 @@ def main(args):
                         tm_tgt[tm_count] += " \n"
                         tm_count += 1
 
-                    
-
                 if tm_count < args.max_t:
                     for _ in range(args.max_t - tm_count):
-                        tm_src[tm_count + _] += "1\n"
-                        tm_tgt[tm_count + _] += "1\n"
+                        tm_src[tm_count + _] += " \n"
+                        tm_tgt[tm_count + _] += " \n"
 
             for i in range(args.max_t):
                 src_path = os.path.join(args.output, f'{args.subset}{i + 1}.de')
