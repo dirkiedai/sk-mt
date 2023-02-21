@@ -21,8 +21,26 @@ pip install --editable ./
 ```
 
 ## Instructions
-Please follow our [official guide](https://github.com/dirkiedai/sk-mt/tree/thumt) to prepare data and pre-trained model.
+Please follow our [official guide](https://github.com/dirkiedai/sk-mt/tree/thumt) to prepare textual data and pre-trained model.
 ### Domain Adaptation
+### Data Preprocessing
+```
+python3 $PROJECT_PATH/data_clean.py \
+        --input $DATA_PATH/$domain.$type \
+        --output $tmp_dir --subset $type \
+        --max-t 64
+
+for i in $(seq 1 $max_t)
+do
+    if [ $type == 'dev' ]
+    then
+    fairseq-preprocess --validpref $tmp_dir/${type}${i} -s de -t en --destdir $dest_path/$i --srcdict $dict_path/dict.de.txt --tgtdict $dict_path/dict.en.txt --workers 20
+    else
+    fairseq-preprocess --testpref $tmp_dir/${type}${i} -s de -t en --destdir $dest_path/$i --srcdict $dict_path/dict.de.txt --tgtdict $dict_path/dict.en.txt --workers 20
+    fi
+    
+done
+```
 #### Inference with SK-MT
 ```
 MODEL_PATH=/path/to/model
