@@ -26,18 +26,27 @@ Please follow our [official guide](https://github.com/dirkiedai/sk-mt/tree/thumt
 ### Data Preprocessing
 You should prepare retrieved reference samples at first, and should not run data_clean.py provided in THUMT branch.
 ```
-python3 $PROJECT_PATH/data_clean.py \
+PROJECT_PATH=./
+DATA_PATH=/path/to/retrieved_samples
+tmp_dir=/path/to/tmp
+
+type=test
+max_t=64
+
+python $PROJECT_PATH/data_clean.py \
         --input $DATA_PATH/$domain.$type \
         --output $tmp_dir --subset $type \
-        --max-t 64
+        --max-t $max_t
 
+DEST_PATH=/path/to/data-bin/$type_tm
+DICT_PATH=/path/to/dictionary_provided_by_the_pretrained_model
 for i in $(seq 1 $max_t)
 do
     if [ $type == 'dev' ]
     then
-    fairseq-preprocess --validpref $tmp_dir/${type}${i} -s de -t en --destdir $dest_path/$i --srcdict $dict_path/dict.de.txt --tgtdict $dict_path/dict.en.txt --workers 20
+        fairseq-preprocess --validpref $tmp_dir/${type}${i} -s de -t en --destdir $DEST_PATH/$i --srcdict $DICT_PATH/dict.de.txt --tgtdict $DICT_PATH/dict.en.txt --workers 20
     else
-    fairseq-preprocess --testpref $tmp_dir/${type}${i} -s de -t en --destdir $dest_path/$i --srcdict $dict_path/dict.de.txt --tgtdict $dict_path/dict.en.txt --workers 20
+        fairseq-preprocess --testpref $tmp_dir/${type}${i} -s de -t en --destdir $DEST_PATH/$i --srcdict $DICT_PATH/dict.de.txt --tgtdict $DICT_PATH/dict.en.txt --workers 20
     fi
     
 done
