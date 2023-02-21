@@ -22,7 +22,9 @@ def parse_args():
     parser.add_argument('--index_name', type=str)
     parser.add_argument('--topk', type=int, default=100)
     parser.add_argument('--allow_hit', action='store_true')
+    parser.add_argument('--resort', action='store_true')
     parser.add_argument('--task', type=str, default='translation')
+
 
     return parser.parse_args()
 
@@ -60,18 +62,11 @@ def main(args):
         queries, responses = [], []
         with open(args.index_file, 'r') as f:
             for i, line in enumerate(f.readlines()):
-                if len(line.strip().split('\t')) < 2 or i > args.ratio * 459721:
+                if len(line.strip().split('\t')) < 2:
                     continue
                 q, r = line.strip().split('\t')
                 queries.append(q)
                 responses.append(r)
-
-        with open(f'/data/dirkiedye/knn-mt-research/sknn-mt-thumt/data/domain_adaptation/bm25_all/law-ratio/law.{args.ratio}.train.de', 'w') as file:
-            file.write('\n'.join(queries))
-            file.close()
-        with open(f'/data/dirkiedye/knn-mt-research/sknn-mt-thumt/data/domain_adaptation/bm25_all/law-ratio/law.{args.ratio}.train.en', 'w') as file:
-            file.write('\n'.join(responses))
-            file.close()
 
         logger.info('build with elasticsearch')
         from elasticsearch.helpers import bulk
@@ -158,7 +153,11 @@ def main(args):
  
                 ids = get_topk_sent_id(query, ret_q, args.topk)
 
-                ret = [[ret_q[ids[i]], ret_r[ids[i]]] if i < len(ids) else ['1', '1'] for i in range(args.topk)]
+                if args.resort:
+                    ret = [[ret_q[ids[i]], ret_r[ids[i]]] if i < len(ids) else ['1', '1'] for i in range(args.topk)]
+                else:
+                    ret = [[ret_q[i], ret_r[i]] if i < len(ids) else ['1', '1'] for i in range(args.topk)]
+
                 ret = sum(ret, [])
                 line = '\t'.join([query, response] + ret)
                 fo.write(line+'\n')

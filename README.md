@@ -37,6 +37,7 @@ The raw data can be downloaded in this [site](https://github.com/roeeaharoni/uns
 To implement SK-MT,  we recommend to follow [copyisallyouneed](https://github.com/jcyk/copyisallyouneed) to perform text retrieval using BM25. The obtained textual data can be used in THUMT framework. Moreover, if you favor fairseq, you are required to follow its instruction to preprocess and binarize the textual data.
 For convenience, We also provide pre-processed [textual data](https://drive.google.com/file/d/1lgd_ETu_S594IYjeaYYP29zCDipv18Bi/view?usp=share_link) for THUMT and [binarized data](https://drive.google.com/file/d/1AgnJhyO_5g55BeCLMUfs7HzEzG6u2FXX/view?usp=sharing) for fairseq.
 
+Update: We also provide the scripts to retrieve reference samples and preprocess 
 ### Domain Adaptation
 This section provides instructions to perform SK-MT based on THUMT framework. More information about the implementations on fairseq framework can be found in the [fairseq branch](https://github.com/dirkiedai/sk-mt/tree/fairseq).
 #### Inference with SK-MT
