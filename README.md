@@ -70,7 +70,26 @@ The recommeded hyper-parameters are the same as what used in Domain Adaptation.
 
 ## Citation
 If you find this repo helpful for your research, please cite the following paper:
-
+```
+@inproceedings{DBLP:conf/iclr/DaiZLCLD023,
+  author       = {Yuhan Dai and
+                  Zhirui Zhang and
+                  Qiuzhi Liu and
+                  Qu Cui and
+                  Weihua Li and
+                  Yichao Du and
+                  Tong Xu},
+  title        = {Simple and Scalable Nearest Neighbor Machine Translation},
+  booktitle    = {The Eleventh International Conference on Learning Representations,
+                  {ICLR} 2023, Kigali, Rwanda, May 1-5, 2023},
+  publisher    = {OpenReview.net},
+  year         = {2023},
+  url          = {https://openreview.net/pdf?id=uu1GBD9SlLe},
+  timestamp    = {Fri, 30 Jun 2023 14:55:53 +0200},
+  biburl       = {https://dblp.org/rec/conf/iclr/DaiZLCLD023.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+```
 ## Contact
 If you have questions, suggestions and bug reports, please email <dirkiedye@gmail.com> or <zrustc11@gmail.com>.
 
